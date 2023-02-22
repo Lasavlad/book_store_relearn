@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:11
+    restart: always
+    volumes:
+      - ./data/postgres/dbb:/var/lib/postgres/data
+    environment:
+      - POSTGRES_USER=book_admin
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  book_store:
+    build: .
+    container_name: book_store
+    image: book_store:book_store
+    ports:
+      - 8000:8000
+    volumes:  
+      - .:/book_store
+    depends_on:
+      - db
+    command: python manage.py runserver 0.0.0.0:8000
