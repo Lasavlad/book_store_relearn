@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     #third party apps
     'crispy_forms',
+    'allauth',
+    'allauth.account',
 
     #new app 
     'users.apps.UsersConfig',
@@ -151,7 +153,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT = 'home'
 
 #django crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#django allauth configurations
+#######################################################
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#removing account sessions remember
+ACCOUNT_SESSION_REMEMBER = True
+
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+
+########################################################
