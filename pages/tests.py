@@ -4,6 +4,8 @@ from django.urls import reverse
 
 class HomePageTests(SimpleTestCase):
 
+    #get url form the home page
+    #set response to url
     def setUp(self):
         url = reverse('home')
         self.response = self.client.get(url)
