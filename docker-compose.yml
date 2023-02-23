@@ -13,6 +13,9 @@ services:
     build: .
     container_name: book_store
     image: book_store:book_store
+    environment:
+      - SECRET_KEY=django-insecure-gv78xsl=x-&_1o5v)@q7zk7mn!=^)uiw*z6)vrf53x+8&ww9kg
+      - DEBUG=1
     ports:
       - 8000:8000
     volumes:  

@@ -4,8 +4,6 @@ from django.test import TestCase
 from django.urls import reverse
 from django.urls import reverse, resolve
 
-from .forms import CustomUserCreationForm
-from .views import SignUpPageView
 
 class CustomUserTests(TestCase):
     def test_create_user(self):
