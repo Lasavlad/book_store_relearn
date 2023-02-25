@@ -16,6 +16,8 @@ services:
     environment:
       - SECRET_KEY=django-insecure-gv78xsl=x-&_1o5v)@q7zk7mn!=^)uiw*z6)vrf53x+8&ww9kg
       - DEBUG=1
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51KY7S3GhKXwGfLPzDVXf0saoU8oMKqKyADemUi5pxxMwNOrHSP2AcVq83thrC1KfWc0jzsP3cuBT7Ly9Sgbnfk4G00YSFnUopA
+      - STRIPE_TEST_SECRET_KEY=sk_test_51KY7S3GhKXwGfLPziyF3bfn5fCEsHRXX6PvjOR0JBIDbdMxneObSlgZTwpt8TUaLv5CqCIyWJNoThcIjwog65Uxv00T5LYaohV
     ports:
       - 8000:8000
     volumes:  
