@@ -6,15 +6,21 @@
 
 {% block content %}
 <h1>homepage</h1>
-<img class="bookcover" src="{% static 'images/book_cover.jpg' %}" alt="">
-<br>
-{% if user.is_authenticated %}
-    hi {{ user.username }} <br>
-    <a href="{% url 'account_logout' %}">Logout</a>
-{% else %}
-<p>you are not logged in</p>
-<a href="{% url 'account_login' %}">Login</a> <br>
-<a href="{% url 'account_signup' %}">Sign Up</a>
-{% endif %}
+
+<form action="{% url 'search_results' %}" method="GET" class="form-inline mt-2 mt-md-0">
+    <input type="text" placeholder="Search" aria-label="Search" name="q" class="form-control mr-sm-2">
+</form>
+<div style="padding-top: 1rem;">
+    <img class="bookcover" src="{% static 'images/book_cover.jpg' %}" alt="">
+    <br>
+    {% if user.is_authenticated %}
+        hi {{ user.username }} <br>
+        <a href="{% url 'account_logout' %}">Logout</a>
+    {% else %}
+    <p>you are not logged in</p>
+    <a href="{% url 'account_login' %}">Login</a> <br>
+    <a href="{% url 'account_signup' %}">Sign Up</a>
+    {% endif %}
+</div>
 
 {% endblock content %}
