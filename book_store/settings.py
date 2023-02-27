@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = [
-    'radiant-bastion-78928.herokuapp.com', 'localhost', '127.0.0.1'
+    'fierce-plains-92827.herokuapp.com', 'localhost', '127.0.0.1'
 ]
 
 
