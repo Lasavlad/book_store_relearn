@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:11
+    restart: always
+    volumes:
+      - ./data/postgres/dbb:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=book_admin
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  book_store:
+    build: .
+    container_name: book_store
+    image: book_store:book_store
+    environment:
+      - ENVIRONMENT=production
+      - SECRET_KEY=django-insecure-gv78xsl=x-&_1o5v)@q7zk7mn!=^)uiw*z6)vrf53x+8&ww9kg
+      - DEBUG=0
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51KY7S3GhKXwGfLPzDVXf0saoU8oMKqKyADemUi5pxxMwNOrHSP2AcVq83thrC1KfWc0jzsP3cuBT7Ly9Sgbnfk4G00YSFnUopA
+      - STRIPE_TEST_SECRET_KEY=sk_test_51KY7S3GhKXwGfLPziyF3bfn5fCEsHRXX6PvjOR0JBIDbdMxneObSlgZTwpt8TUaLv5CqCIyWJNoThcIjwog65Uxv00T5LYaohV
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    command: gunicorn book_store.wsgi -b 0.0.0.0:8000
+volumes:
+      postgres_data:
