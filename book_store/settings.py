@@ -230,7 +230,7 @@ if ENVIRONMENT == 'production':
     SESSION_COOKIE_SECURE = True 
     CSRF_COOKIE_SECURE = True
     DEBUG = False
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARD_PROTO', 'https')
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ###########################################################
 
