@@ -6,3 +6,17 @@ h1 {
     height: 300px;
     width: auto;
 }
+
+.photo {
+    width: 850px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 390px){
+    .photo {
+        width: 330px;
+        height: auto;
+        border-radius: 10px;
+    }
+}

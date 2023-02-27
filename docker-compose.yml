@@ -20,7 +20,7 @@ services:
       - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51KY7S3GhKXwGfLPzDVXf0saoU8oMKqKyADemUi5pxxMwNOrHSP2AcVq83thrC1KfWc0jzsP3cuBT7Ly9Sgbnfk4G00YSFnUopA
       - STRIPE_TEST_SECRET_KEY=sk_test_51KY7S3GhKXwGfLPziyF3bfn5fCEsHRXX6PvjOR0JBIDbdMxneObSlgZTwpt8TUaLv5CqCIyWJNoThcIjwog65Uxv00T5LYaohV
     ports:
-      - 8001:8000
+      - 8001:8001
     volumes:  
       - .:/book_store
     depends_on:
