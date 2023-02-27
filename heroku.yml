@@ -3,10 +3,10 @@ setup:
   - plan: heroku-postgresql
 build:
   docker:
-    book_store: Dockerfile
+    web: Dockerfile
 release:
-  image: book_store
+  image: web
   command:
     - python manage.py collectstatic --noinput
 run:
-  book_store: gunicorn book_store.wsgi:application --bind 0.0.0.0:$PORT
+  web: gunicorn book_store.wsgi:application --bind 0.0.0.0:$PORT
