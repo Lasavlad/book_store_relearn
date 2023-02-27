@@ -9,4 +9,4 @@ release:
   command:
     - python manage.py collectstatic --noinput
 run:
-  book_store: gunicorn book_store.wsgi:application
+  book_store: gunicorn book_store.wsgi:application --bind 0.0.0.0:$PORT
