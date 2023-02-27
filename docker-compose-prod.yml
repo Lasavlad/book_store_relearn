@@ -7,12 +7,12 @@ services:
     volumes:
       - ./data/postgres/dbb:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=book_admin
+      - POSTGRES_USER=book_admin_v2
       - POSTGRES_HOST_AUTH_METHOD=trust
   book_store:
     build: .
-    container_name: book_store
-    image: book_store:book_store
+    container_name: book_store_v2
+    image: book_store_v2:book_store_v2
     environment:
       - ENVIRONMENT=production
       - SECRET_KEY=django-insecure-gv78xsl=x-&_1o5v)@q7zk7mn!=^)uiw*z6)vrf53x+8&ww9kg
