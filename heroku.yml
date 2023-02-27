@@ -5,7 +5,7 @@ build:
   docker:
     book_store: Dockerfile
 release:
-  image: book_store
+  image: book_store:book_store
   command:
     - python manage.py collectstatic --noinput
 run:
